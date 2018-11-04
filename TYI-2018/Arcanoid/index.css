@@ -1,0 +1,87 @@
+head, body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+body {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+}
+
+#container {
+    position: relative;
+}
+
+#container>:not(canvas) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+
+.logo {
+    text-align: center;
+    margin-top: 30px;
+    color: white;
+    font-size: 50px;
+}
+
+.by {
+    text-align: center;
+    font-size: 20px;
+    color: white;
+}
+
+.state {
+    display: none;
+}
+
+.menu {
+    margin-top: 40px;
+
+    text-align: center;
+}
+
+.menu>button, .menu-button {
+    background: #112756;
+    border: 3px solid black;
+    font-size: 30px;
+    color: rgb(210, 210, 210);
+    padding: 10px 30px;
+    min-width: 300px;
+    transition: all 1s;
+    display: block;
+    margin: 0 auto;
+
+    margin-bottom: 10px;
+}
+
+.menu>button:hover, .menu-button:hover {
+    background: green;
+}
+
+.editor-toolbar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    padding: 10px;
+    background: white;
+}
+
+.empty-button {
+    padding: 0;
+    border: none;
+    transition: all .2s;
+}
+
+.empty-button:hover {
+    opacity: 0.7;
+}

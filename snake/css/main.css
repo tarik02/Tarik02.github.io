@@ -1,0 +1,57 @@
+html, body {
+  width: 100%;
+  height: 100%;
+}
+body {
+  margin: 0;
+  background: black;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  flex: 1;
+  outline: 1px solid white;
+}
+
+canvas {
+  image-rendering: optimizeQuality;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: optimize-contrast;
+  -ms-interpolation-mode: nearest-neighbor;
+  shape-rendering: crispEdges;
+}
+
+.scores {
+  flex: 75px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.score {
+  text-align: center;
+  color: white;
+  width: 200px;
+  font-size: 14px;
+  line-height: 16px;
+}
+
+.dialog {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  font-size: 25px;
+}
+
+.dialog button {
+  margin-top: 20px;
+  height: 30px;
+  font-size: 15px;
+}

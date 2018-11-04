@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Arcanoid</title>
+    <link rel="stylesheet" href="index.css" />
+</head>
+<body oncontextmenu="event.preventDefault()">
+    <div id="container" onmousedown="mousedown(event)" onmousemove="mousemove(event)" onmouseup="mouseup(event)">
+        <canvas id="canvas"></canvas>
+        <div>
+            <!-- <button>Test</button> -->
+        </div>
+
+        <div class="state" id="state_menu">
+            <div class="logo">
+                Arcanoid
+            </div>
+            <div class="by">
+                Збірної команди Волинської області
+            </div>
+
+            <div class="menu">
+                <select id="play-level-name" class="menu-button" style="font-size: 20px;">
+                </select>
+
+                <button onclick="switchState('difficulty')">Грати</button>
+                <button onclick="switchState('editor')">Редактор рівнів</button>
+                <!-- <button onclick="switchState('scores')">Результати</button> -->
+            </div>
+        </div>
+
+        <div class="state" id="state_difficulty">
+            <div class="logo">
+                Arcanoid
+            </div>
+            <div class="by">
+                Збірної команди Волинської області
+            </div>
+        
+            <div class="menu">
+                <button onclick="switchState('game', 'easy')">Легко</button>
+                <button onclick="switchState('game', 'normal')">Нормально</button>
+                <button onclick="switchState('game', 'hard')">Важко</button>
+
+                <br />
+
+                <button onclick="switchState('menu')">Назад</button>
+            </div>
+        </div>
+
+        <div class="state" id="state_game">
+
+        </div>
+
+        <div class="state" id="state_editor">
+            <div class="editor-toolbar">
+                <input type="text" id="editor-level-name" />
+                <button class="" onclick="editorSaveLevel(getElementById('editor-level-name').value)">Зберегти</button>
+                <button class="" onclick="editorPlay(getElementById('editor-level-name').value)">Зберегти і грати</button>
+
+                <span id="editor-tiles">
+                    <button class="empty-button" onclick="editorSetTile(0)"><img src="assets/images/tile1.png" width="60" /></button>
+                    <button class="empty-button" onclick="editorSetTile(1)"><img src="assets/images/tile2.png" width="60" /></button>
+                    <button class="empty-button" onclick="editorSetTile(2)"><img src="assets/images/tile3.png" width="60" /></button>
+                    <button class="empty-button" onclick="editorSetTile(3)"><img src="assets/images/tile4.png" width="60" /></button>
+                    <button class="empty-button" onclick="editorSetTile(4)"><img src="assets/images/death_tile.png" width="60" /></button>
+                </span>
+
+                <button style="float: right;" onclick="switchState('menu')">Меню</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="index.js"></script>
+</body>
+</html>
